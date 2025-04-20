@@ -1,8 +1,19 @@
 import React from 'react'
 
-function Dice() {
+function Dice(props) {
+  const styles = {
+    backgroundColor: props.isHold? "#7C3AED" : "white",
+    color: props.isHold? "white" : "black"
+  }
+
   return (
-    <div className='w-15 h-15 bg-[#1F2937] rounded-md p-5 text-white font-medium flex items-center justify-center cursor-pointer'>1</div>
+    <div 
+      className='bg-white text-[#6D28D9] shadow-xl rounded-lg flex items-center px-6 py-3 cursor-pointer font-semibold gap-2 border-1 border-[#F3F4F6]'
+      style={styles}
+      onClick={() => props.toggle(props.id)}
+    >
+    {props.value}
+    </div>
   )
 }
 
